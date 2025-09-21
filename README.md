@@ -86,3 +86,18 @@
 ## 许可证
 
 本项目基于原版 SillyTavern 的许可证条款发布。
+
+## 🔧 最新修复 (Latest Fix)
+
+### v1.1 - 修复类型错误 (Type Error Fix)
+- **修复问题**: 解决了 `content.includes is not a function` 错误
+- **修复内容**: 在 `macros.js` 中添加了类型检查，确保 `content` 变量始终为字符串类型
+- **影响范围**: 自动插图生成功能现在更加稳定，不会因为类型错误而中断
+
+### 修复详情 (Fix Details)
+1. 在 `evaluateMacros` 函数开始时添加类型检查
+2. 在循环中的 `includes` 调用前添加类型验证
+3. 在 `replace` 操作后确保结果仍为字符串类型
+
+这些修复确保了自动插图生成功能的稳定性和可靠性。
+
